@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150127233217) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "autenticacions", force: :cascade do |t|
     t.string   "user"
     t.string   "crypted_password"
@@ -36,15 +39,6 @@ ActiveRecord::Schema.define(version: 20150127233217) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-
-  create_table "usuarios", force: :cascade do |t|
-    t.string   "usuario"
-    t.string   "email"
-    t.string   "crypted_password"
-    t.string   "salt"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
