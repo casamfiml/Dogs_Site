@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @autenticacion.user %>
+</p>
+
+<p>
+  <strong>Crypted password:</strong>
+  <%= @autenticacion.crypted_password %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @autenticacion.email %>
+</p>
+
+<%= link_to 'Edit', edit_autenticacion_path(@autenticacion) %> |
+<%= link_to 'Back', autenticacions_path %>
